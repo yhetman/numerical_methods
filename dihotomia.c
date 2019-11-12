@@ -6,7 +6,7 @@
 /*   By: yhetman <yhetman@student.unit.ua>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 21:06:20 by yhetman           #+#    #+#             */
-/*   Updated: 2019/11/12 22:19:58 by yhetman          ###   ########.fr       */
+/*   Updated: 2019/11/12 23:00:57 by yhetman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ void	dihotomia(double eps, double a, double b)
 	i = 0;
 	last = 0;
 	next = (a + b) / 2;
-	res = log2((a + b) / eps);
+	res = (a + b) / eps;
+	res = log2(res);
+	printf("log2 = %f\n", res);
 	res = (int)(fabs(res) + 1);
 	while (abs(next - last) > eps)
 	{
@@ -60,9 +62,10 @@ int main()
 {
 	double eps, a, b;
 
-	eps = 10 ^ (-3);
-	a = -0.9148;
-	b= 4.7587;
-
+	eps = 10 ^ (-4);
+	a = 0;
+	b = 3.1415 / 2;
+	printf("%f\n%f\n", a, b);
 	dihotomia(eps, a, b);
+	return (0);
 }
