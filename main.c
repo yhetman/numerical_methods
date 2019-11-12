@@ -6,13 +6,14 @@
 /*   By: yhetman <yhetman@student.unit.ua>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 23:08:26 by yhetman           #+#    #+#             */
-/*   Updated: 2019/11/12 23:12:03 by yhetman          ###   ########.fr       */
+/*   Updated: 2019/11/12 23:37:34 by yhetman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 void	dihotomia(double eps, double a, double b);
+void	mod_Newton(double eps, double a, double b);
 
 int main()
 {
@@ -22,5 +23,6 @@ int main()
 	a = 0;
 	b = 3.1415 / 2;
 	dihotomia(eps, a, b);
+	mod_Newton(eps, a, b);
 	return (0);
 }
