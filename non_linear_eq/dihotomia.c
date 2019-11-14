@@ -41,7 +41,7 @@ void	dihotomia(double eps, double a, double b)
 	last = 0;
 	next = (a + b) / 2;
 	res = (a + b) / eps;
-	res = log2(res);
+	res = log2((int)(res));
 	res = (int)(fabs(res) + 1);
 	while (abs(next - last) > eps)
 	{
