@@ -15,13 +15,13 @@
 void	dihotomia(double eps, double a, double b);
 void	mod_Newton(double eps, double a, double b);
 
-int main()
+int main(void)
 {
 	double eps, a, b;
 
 	eps = 10 ^ (-4);
 	a = 0;
-	b = 3.1415 / 2;
+	b = M_PI / 2;
 	dihotomia(eps, a, b);
 	mod_Newton(eps, a, b);
 	return (0);
