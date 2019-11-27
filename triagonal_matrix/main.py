@@ -1,6 +1,6 @@
 import numpy as np
-from computational_methods import thomas_algorithm
-from computational_methods import Jacobi
+from algorithm import triagonal_algo
+from algorithm import Jacobi
 
 
 def init_mat():
@@ -83,10 +83,15 @@ def main():
             x, res = Jacobi(mat, f, x, ell)
             results_out()
             print("X :\n" + str(x) + '\n' + "Num :\n\t" + str(res) + '\n')
+
+        elif method == 3:
+
+            break
+
         else:
             print("-------------------------------------------------------")
             print ("\t  Oops... Invalid input! Try again!")
             print("-------------------------------------------------------")
-
+            continue
 
 main()

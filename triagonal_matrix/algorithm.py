@@ -1,4 +1,4 @@
-import my_math as m
+import calculations as calc
 
 
 def enter_x_arr(lam, beta, x, size):
@@ -26,23 +26,22 @@ def det_mat(c, z):
     return res
 
 
-def thomas_algorithm(mat, f):
-    c_dia = m.sort_diagonal(mat)
-    a_dia = m.sort_diagonal(mat, n = 1, p = 1)
-    b_dia = m.sort_diagonal(mat, k = 1, p = 1)
+def triagonal_algo(mat, f):
+    c_dia = calc.sort_diagonal(mat)
+    a_dia = calc.sort_diagonal(mat, n = 1, p = 1)
+    b_dia = calc.sort_diagonal(mat, k = 1, p = 1)
     size = len(mat[0])
     x = []
-    lam, beta, z, value = m.prepare_lam_beta_z_and_x_n(c_dia, a_dia, b_dia, f)
+    lam, beta, z, value = calc.prepare_lam_beta_z_and_x_n(c_dia, a_dia, b_dia, f)
     x.append(value)
     x = enter_x_arr(lam, beta, x, size)
-    x = m.reinversion_vector_x(x)
+    x = calc.reinversion_vector_x(x)
     res = det_mat(c_dia[0], z)
     return x, res
 
 
 def init_r(mat):
     r = []
-    # r is a vector of div 1 on diagonal matrix
     size = len(mat[0])
     for i in range(size):
         r.append(1/mat[i][i])
@@ -76,7 +75,7 @@ def Jacobi(mat, b, x, ell):
     x_arr.append(x)
     x = []
 
-    while m.vector_module(x_arr[j], x_arr[j-1]) > ell:
+    while calc.vector_module(x_arr[j], x_arr[j-1]) > ell:
         for i in range(3):
             x.append(r[i] * (b[i] - summary(mat, i, x_arr[j])))
         x_arr.append(x)
@@ -84,7 +83,7 @@ def Jacobi(mat, b, x, ell):
         j += 1
 
     try:
-        num = m.condition_number(mat)
+        num = calc.condition_number(mat)
     except Exception:
         num = "Error"
 
