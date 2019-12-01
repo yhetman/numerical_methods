@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -52,5 +53,6 @@ int main(void)
 		cout.width(20); cout.precision(14); cout << x;
 		cout.width(20); cout.precision(14); cout << sum << endl;
 	}
+	pause();
 	return (0);
 }
