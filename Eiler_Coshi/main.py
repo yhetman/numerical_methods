@@ -27,8 +27,8 @@ def koshi_euler():
 
     plt.plot(container_for_x, container_for_y, label="y'")
     plt.plot(container_for_x, container_for_z, label="z'")
-    plt.xlabel('x axis')
-    plt.ylabel('y axis')
+    plt.xlabel('X')
+    plt.ylabel('Y')
     plt.legend()
     plt.show()
 
